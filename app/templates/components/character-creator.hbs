@@ -1,1 +1,21 @@
-{{yield}}
+<h2>First pick a name</h2>
+  <Input @value={{this.name}} />
+<h2>Then select a class</h2>
+<ul>
+{{#each @classes as |characterClass|}}
+  <li>
+    <button {{action "changeClass" characterClass}}>{{characterClass}}</button>
+  </li>
+{{/each}}
+</ul>
+
+<h2>This is you!</h2>
+{{#if (eq this.selectedClass "warrior")}}
+  <Warrior @name={{this.name}} />
+{{/if}}
+{{#if (eq this.selectedClass "mage")}}
+  <Mage @name={{this.name}} />
+{{/if}}
+{{#if (eq this.selectedClass "archer")}}
+  <Archer @name={{this.name}} />
+{{/if}}
