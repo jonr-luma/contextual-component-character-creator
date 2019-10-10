@@ -1,7 +1,28 @@
 # ember-contextual-component-test
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+## Ember Contextual Components
+Contextual components are ember components that are wrapped within the context of an outer component.
+In it's simplest form, it might look something like this:
+```
+// app/templates/application.hbs
+<CharacterCreator @classes={{this.classes}} >
+  <div class="my-awesome-content">
+    <p>Hey, I'm a wizard!</p>
+  </div>
+</CharacterCreator>
+
+// app/templates/character-creator.hbs
+<div class="character-creator-content">
+  {{yield}}
+</div>
+```
+The syntax seen for the character creator component and it's wrapped content is known the component's
+block form. The `{{yield}}` helper tells the component where to put it's wrapped content. 
+
+That's great, but what about sharing data? Let's look at an example.
+
+### Further Reading
+[Ember guides on wrapping components](https://guides.emberjs.com/release/components/wrapping-content-in-a-component/)
 
 ## Prerequisites
 
