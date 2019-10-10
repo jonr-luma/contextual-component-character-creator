@@ -1,11 +1,5 @@
 <h2>This is you!</h2>
-{{#if (eq this.selectedClass "warrior")}}
-  <Warrior @name={{this.name}} />
-{{/if}}
-{{#if (eq this.selectedClass "mage")}}
-  <Mage @name={{this.name}} />
-{{/if}}
-{{#if (eq this.selectedClass "archer")}}
-  <Archer @name={{this.name}} />
-{{/if}}
-{{yield}}
+
+{{#let (component this.selectedClass) as |CharacterClass|}}
+  <CharacterClass @name={{this.name}} />
+{{/let}}
