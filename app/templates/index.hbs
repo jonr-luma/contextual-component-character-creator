@@ -1,1 +1,5 @@
-<CharacterCreator @classes={{this.model}} />
+<CharacterCreator @classes={{this.model}} as |creator|>
+  {{creator.namePicker}}
+  {{creator.classPicker}}
+  {{creator.showCharacter}}
+</CharacterCreator>

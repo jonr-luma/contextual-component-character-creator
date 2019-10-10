@@ -1,0 +1,8 @@
+<h2>Then select a class</h2>
+<ul>
+{{#each @classes as |characterClass|}}
+  <li>
+    <button {{action "didPickClass" characterClass}}>{{characterClass}}</button>
+  </li>
+{{/each}}
+</ul>
